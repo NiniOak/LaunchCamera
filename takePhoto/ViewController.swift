@@ -8,16 +8,54 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        picker.delegate = self
     }
+    
+    @IBOutlet weak var displayImageView: UIImageView!
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func takeSelfieBtn(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.allowsEditing = true
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true, completion: nil)
+        }
+        else {
+            ifCameraUnavailable()
+        }
+    }
+    
+    func ifCameraUnavailable() {
+        
+        let displayAlert = UIAlertController ( title: "Camera Unavilable", message: "Sorry, no device camera", preferredStyle: .alert)
+        let clickOkay = UIAlertAction ( title: "OK", style: .default, handler: nil)
+        
+        displayAlert.addAction(clickOkay)
+        present( displayAlert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let selectImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            var chosenImage = UIImage()
+            
+            displayImageView.image = selectImage
+            displayImageView.contentMode = .scaleAspectFit
+            displayImageView.image = chosenImage
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 
 
