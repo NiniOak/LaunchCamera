@@ -12,6 +12,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     let picker = UIImagePickerController()
     
+    //Add comments to this project
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
