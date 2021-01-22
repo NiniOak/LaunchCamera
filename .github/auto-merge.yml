@@ -1,0 +1,34 @@
+# Configuration for probot-auto-merge - https://github.com/bobvanderlinden/probot-auto-merge
+
+updateBranch: true
+deleteBranchAfterMerge: true
+reportStatus: true
+mergeMethod: merge
+
+# In the example below when a pull request gets 2 approvals from owners,
+# members or collaborators, the automatic merge will continue.
+minApprovals:
+  MEMBER: 0
+  COLLABORATOR: 0
+
+maxRequestedChanges:
+  NONE: 0
+
+# blockingTitleRegex: '\bWIP\b'
+
+# requiredTitleRegex: '\box-bot\b'
+
+# blockingBodyRegex: '(^|\\s)do-not-merge($|\\s)'
+
+# requiredBaseBranches:
+#   - master
+
+Will merge whenever the above conditions are met, but also
+the owner has approved or merge label was added.
+rules:
+  - minApprovals:
+      OWNER: 0
+  # - requiredLabels:
+  #     - merge
+
+mergeCommitMessage: "{title} (#{number})"
