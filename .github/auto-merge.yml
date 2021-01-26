@@ -5,8 +5,8 @@ deleteBranchAfterMerge: true
 reportStatus: true
 
 minApprovals:
-  MEMBER: 1
-  COLLABORATOR: 0
+  MEMBER: 0
+  COLLABORATOR: 1
 maxRequestedChanges:
   NONE: 0
 blockingLabels:
@@ -18,8 +18,7 @@ requiredBaseBranches:
 # Pull requests will only be automatically merged when all of these reviewers have approved the
 # pull request.
 requiredReviewers:
-  # - ox-bot-approver
-  - autoapproval
+  - ox-bot-approver
 # Pull requests will only be automatically merged if there is a match between the regular expression
 # and its title
 requiredTitleRegex: '\box-bot\b'
@@ -28,7 +27,7 @@ requiredTitleRegex: '\box-bot\b'
 rules:
   - minApprovals:
       OWNER: 0
-      MEMBER: 1
-      COLLABORATOR: 0
+      MEMBER: 0
+      COLLABORATOR: 1
 
 mergeCommitMessage: "{title} (#{number})"
