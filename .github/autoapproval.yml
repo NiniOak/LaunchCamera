@@ -1,0 +1,17 @@
+# Defines the list of users, whos pull requests should be approved automatically
+from_owner:
+  - ox-bot
+  - ox-bot-approver
+  - ninioak
+
+# Defines the list of labels on PR, which should be present for approving PR automatically
+# Assign an empty array if you want to approve PRs without any label (example: required_labels: []).
+required_labels:
+  []
+  # - oxbot
+
+# Defines the list of labels on PR, which should be added once PR was approved automatically
+# Assign an empty array if no labels should be applied to PRs (example: apply_labels: []).
+apply_labels:
+  []
+  # - merge
