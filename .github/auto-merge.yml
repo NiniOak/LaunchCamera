@@ -11,15 +11,17 @@ maxRequestedChanges:
   NONE: 0
 blockingLabels:
   - blocked
-
+# Whenever required base branches are configured, pull requests will only be automatically merged whenever
+# their base branch (into which the PR would be merged) is matching any regular expression listed.
 requiredBaseBranches:
   - master
-
 # Pull requests will only be automatically merged when all of these reviewers have approved the
 # pull request.
 requiredReviewers:
   - ox-bot-approver
-
+# Pull requests will only be automatically merged if there is a match between the regular expression
+# and its title
+requiredTitleRegex: '\box-bot\b'
 # Will merge whenever the above conditions are met, but also
 # the owner has approved or merge label was added.
 rules:
