@@ -5,7 +5,7 @@ deleteBranchAfterMerge: true
 reportStatus: true
 
 minApprovals:
-  MEMBER: 0
+  MEMBER: 1
   COLLABORATOR: 0
 maxRequestedChanges:
   NONE: 0
@@ -28,7 +28,7 @@ requiredTitleRegex: '\box-bot\b'
 rules:
   - minApprovals:
       OWNER: 0
-      MEMBER: 0
+      MEMBER: 1
       COLLABORATOR: 0
 
 mergeCommitMessage: "{title} (#{number})"
