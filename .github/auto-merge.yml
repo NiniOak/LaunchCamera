@@ -6,7 +6,7 @@ reportStatus: true
 
 minApprovals:
   MEMBER: 0
-  COLLABORATOR: 1
+  COLLABORATOR: 0
 maxRequestedChanges:
   NONE: 0
 blockingLabels:
@@ -29,6 +29,6 @@ rules:
   - minApprovals:
       OWNER: 0
       MEMBER: 0
-      COLLABORATOR: 1
+      COLLABORATOR: 0
 
 mergeCommitMessage: "{title} (#{number})"
