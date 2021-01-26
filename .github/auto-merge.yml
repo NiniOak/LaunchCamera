@@ -17,8 +17,9 @@ requiredBaseBranches:
   - master
 # Pull requests will only be automatically merged when all of these reviewers have approved the
 # pull request.
+# - ox-bot-approver
 requiredReviewers:
-  - ox-bot-approver
+  - autoapproval
 # Pull requests will only be automatically merged if there is a match between the regular expression
 # and its title
 requiredTitleRegex: '\box-bot\b'
